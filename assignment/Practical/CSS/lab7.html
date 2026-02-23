@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom List Example</title>
+<style>
+    ul, ol {
+    list-style-type: none;
+    padding-left: 0;
+    }
+
+  li {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    margin: 10px 0;
+   }
+   .abc li::before {
+    content: "# ";
+    color: green;
+    font-weight: bold;
+   }
+   .xyz {
+    counter-reset:vishal;
+   }
+   .xyz li {
+    counter-increment:vishal;
+   }
+   .xyz li::before {
+    content: counter(vishal);
+    color: blue;
+    font-weight: 200px;
+    }
+</style>
+</head>
+<body>
+
+<h1>My Lists</h1>
+
+<h2>Unordered List</h2>
+<ul class="abc">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+<h2>Ordered List</h2>
+<ol class="xyz">
+    <li>Register</li>
+    <li>Login</li>
+    <li>Submit Form</li>
+</ol>
+</body>
+</html>

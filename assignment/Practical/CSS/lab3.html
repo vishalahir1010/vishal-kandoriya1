@@ -3,24 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sampler web page</title>
+    <title>Document</title>
     <style>
-        .txt{
-            font-size: 24px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: navy;
-            text-align: justify;
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .vk{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: navy;
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3a0ba7;
+            color: white;
             text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+       
+        form {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+       
+
+        footer {
+            text-align: center;
+            background-color: #2a3aca;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1 class="vk">Welcome to My Web Page</h1>
-    <p class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam, id. Excepturi voluptate adipisci vitae, asperiores nemo fuga neque! Quos aut autem minima laudantium dolores molestiae quidem asperiores officia dolor quae!</p>
+      <header>
+        <h1>Welcome to My Website</h1>
+        <p>This is a simple HTML webpage example.</p>
+    </header>
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>Hello! My name is vishal. I am learning HTML and web designing.</p>
+        </section>
+
+        <section>
+            <h2>My Skills</h2>
+            <p>Here are some technologies I am learning:</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Sample Image</h3>
+            <p>It is a sample image:</p>
+            <img src="https://media.gettyimages.com/id/1468427155/photo/man-in-virtual-reality.jpg?s=612x612&w=0&k=20&c=Di3anRba5CuSuATCSQ7HLfWKy5jkTvSQkaxzbP_80qY="alt="Sample Image">
+        </section>
+
+        <section>
+            <h2>Contact Form</h2>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p> My Website</p>
+    </footer>
+
 </body>
 </html>
-
