@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(196, 198, 201);
+        }
+        .gallery{
+            display: grid;
+            grid-template-columns: repeat(3,200px);
+            justify-content: center;
+            margin-top: 120px;
+            gap: 20px;
+        }
+        .gallery img{
+            height: 150px;
+            width: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        @media(max-width:600px){
+            .gallery{
+                grid-template-columns: repeat(2,200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVfywOzdE2oxB5XpFC_mFW5QVXPMEoKgY-Kw&s" alt="Girnar"> 
+        <img src="https://i0.wp.com/www.opindia.com/wp-content/uploads/2021/02/Ahmedabad-630x381-1.jpg?fit=630%2C381&ssl=1" alt="ahmedabad">
+        <img src="https://www.gujarattourism.com/content/dam/gujrattourism/images/flora--fauna/gir-national-park/gallery/Sasan%20Gir%20(10).jpg" alt="Forest ">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrcmVjRpO84u777be9yKHsPCL5JZZzzZzTAA&s" alt="himalay">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr3ja_bhI-Kvy75688Mlu1FUdNRc1Pji4-Kg&s" alt="sky">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR9UrwTkZ-cIZvGPvCQk2iyyQszpCX5hepNg&s" alt="Garden">
+     </div>
+</body>
+</html>
