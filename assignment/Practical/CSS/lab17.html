@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color:  #021e2e;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        .card{
+            width: 340px;
+            border: 1px solid rgba(0,255,255,0.2);
+            border-radius: 25px;
+            background-color: rgba(0, 255, 255, 0.06);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            transition: 1s ease;
+        }
+        .card:hover{
+            transform: translateY(-12px) ;
+            box-shadow: 0 35px 80px rgba(0, 255, 255, 0.3);
+            transform: rotateY(360deg);
+        }
+        .card img{
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+        .contant{
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: white;
+        }
+        .title{
+            font-size: 24px;
+            font-weight: 600;
+            color: #00f5ff;
+        }
+        .detail{
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+        }
+        .price{
+           font-size: 22px;
+           font-weight: bold;
+           color: #00f5ff;
+        }
+        .card button{
+            padding: 12px;
+            border-radius: 30px;
+            border: 1px solid #00f5ff;
+            background-color: transparent;
+            color: #00f5ff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .card button:hover{
+            background-color: #00f5ff;
+            color: #021e2e;
+            box-shadow: 0 0 20px #00f5ff;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh5t1CUHAiV2xy8pzEc4TIJ1bLjz9LNMshnw&s" alt="">
+        <div class="contant">
+            <div class="title">Aqua Elite Watch</div>
+            <div class="detail">Premium aqua edition smartwatch with AMOLED display, waterproof body and long-lasting battery performance.</div>
+            <div class="price">$169.99</div>
+            <button>Buy now</button>
+        </div>
+    </div>
+</body>
+</html>

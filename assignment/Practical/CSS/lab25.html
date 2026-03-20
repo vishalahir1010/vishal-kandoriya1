@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Assignment</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family:  sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      color: white;
+      padding: 15px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 250px;
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .price {
+      font-weight: bold;
+      color: green;
+      margin-top: 10px;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 8px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+      @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+
+    .columns {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      gap: 20px;
+    }
+  
+    @media (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="navbar">
+    <h2>MySite</h2>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+ 
+  <div class="columns">
+    <div class="column">Column 1</div>
+    <div class="column">Column 2</div>
+    <div class="column">Column 3</div>
+  </div>
+
+  
+  <div class="products">
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCytP-1BGm9A9fFyUasMQomk7R4eKnPCRQQA&s" alt="Product">
+      <h3>Product 1</h3>
+      <p>Nice product description.</p>
+      <div class="price">₹499</div>
+      <button class="btn">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEZioGi72LXqA8kcMqzXIs7cFHSbg3UyMI0Q&s" alt="Product">
+      <h3>Product 2</h3>
+      <p>High quality item.</p>
+      <div class="price">₹799</div>
+      <button class="btn">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIMgndqDLqHSpzAvgD1CYtWgyI8i83Vh3UWQ&s" alt="Product">
+      <h3>Product 3</h3>
+      <p>Best selling product.</p>
+      <div class="price">₹999</div>
+      <button class="btn">Buy Now</button>
+    </div>
+  </div>
+</body>
+</html>

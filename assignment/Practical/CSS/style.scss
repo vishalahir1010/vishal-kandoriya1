@@ -1,0 +1,28 @@
+$c1: #4f46e5;
+
+
+@mixin button-style {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+
+.container {
+  text-align: center;
+  padding:20px;
+
+  h1 {
+    color:$c1;
+  }
+
+  .btn {
+    @include button-style;
+    background: $c1;
+
+    :hover {
+      background: darkblue;
+    }
+  }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+            font-family:sans-serif;
+        }
+        .navbar{
+            font-weight: 500;
+            display: flex;
+          align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            border: 1px solid yellow;
+            padding: 20px 60px;
+            cursor: pointer;
+            border-radius: 25px;
+            margin-top: 5px;
+        }
+        .navbar:hover{
+            box-shadow: 0px 5px 25px yellow;
+        }
+         .logo img{
+            height: 45px;
+            width: 150px;
+            object-fit: cover;          
+        }
+        .nav{
+            display: flex;
+            gap: 40px;
+        }
+        .nav a{
+            text-decoration: none;
+            color:yellow;
+        }
+        .main{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 30px;
+            padding: 40px 60px;
+        }
+        .main img{
+            border-radius: 15px;
+            height: 250px;
+            width: 100%;
+            transition: 0.3s;
+            object-fit: cover;
+        }
+        .main img:hover{
+            transform: translateY(-15px);
+            box-shadow: 12px 12px 25px rgb(35, 41, 24);
+        }
+        @media (max-width:768px){
+            .main{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        @media (max-width:400px){
+            .main{
+                grid-template-columns: 1fr;
+            }
+            .navbar{
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+         <div class="logo">
+           <img src="https://images.scalebranding.com/modern-v-logo-1c9f4014-41b2-4eb3-a8ea-1323ac3d85be.jpg" alt="Vishal Logo">
+        </div>
+        <div class="nav">
+            <a href="">Home</a>
+            <a href="">About us</a>
+            <a href="">contact us</a>
+            <a href="">portfoliyo</a>
+        </div>
+    </div>
+    <div class="main">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJtpkpW1PIgSqMA7yga62JyNtf3dVQicYE_g&s" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGES9aW9e-98pi-V8jg3i4pAmJO-IuhwhwtQ&s" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-_Bq-W6DC4bH6pdg6fvPHXBjTCzLURCiOdQ&s" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzvy7T0X3maF7dcqJvpKSQO8roiWDTzKSFaw&s" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4tuQGl_dw31WuCgCAICauMXR378HdI2DsIw&s" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa8WCepq-BFY0a6uBmGSL4Wb0g42KB5dCkKA&s" alt="">
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.box {
+  width: 300px;
+  background: red;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .box {
+    background: blue;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .box {
+    background: green;
+  }
+}
+</style>
+</head>
+<body><div class="box">Media Query</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .main{
+            background-color:  #f4f4f4;
+            height: 650px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+           color: rgb(7, 7, 7);
+           background-color:white;
+           height: 350px;
+           width:270px;
+           border-radius: 15px;
+           display: flex;
+           flex-direction: column;
+           justify-content: space-evenly;
+           align-items: center;
+        }
+        .box button{
+            background-color: rgb(4, 120, 155);
+            width: 220px;
+            height: 30px;
+            border-radius: 3px;
+            border: none;
+        }
+        .box button:hover{
+            background-color: rgb(28, 165, 10);
+            color:white;
+        }
+        .box h2{
+            text-align: center;
+            padding: 3px;
+            
+        }
+        .box input{
+            width: 200px;
+            padding: 9px;
+            border-radius: 3px;
+            border: 1px solid black;
+        }
+        .box textarea{
+            height: 100px;
+            width: 215px;
+            border-radius: 3px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <h2>Contact us </h2>
+            <input placeholder="Enter your name" class="search input">
+            <input placeholder="Enter your name" class="search input">
+            <textarea placeholder="Enter your message"></textarea><br>
+            <button>Submit</button>
+        </div>
+    </div>
+</body>
+</html>

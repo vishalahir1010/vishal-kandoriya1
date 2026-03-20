@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(215, 248, 248);
+            font-family: Arial, sans-serif;
+        }
+        header{
+            text-align: center;
+            color: white;
+            background-color: black;
+            padding: 20px;
+        }
+        .navbar{
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+            
+        }
+         .navbar-brand{
+            font-weight: bold;
+            font-size: 20px;
+            color: white ;
+        }
+         .logo-img{
+            border-radius: 5px;
+        }
+        .abc {
+            max-width: 520px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        form label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        
+        button {
+            width: 48%;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .submit{
+            background: green;
+        }
+
+        .reset{
+            background: red;
+        }
+
+        
+        table {
+            width: 100%;
+            background: white;
+            margin-top: 20px;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+         <h2>Hashcrypt Technologies Pvt. Ltd.</h2>
+    </header>
+    <nav class="navbar bg-body-tertiary bg-primary">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="#">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZB4Wa19fGQtpFWq41wnxzouOOUfZb7AQzQ&s" alt="Logo" width="30" height="24" class="d-inline-block align-text-top p-3">
+      Customer System
+    </a>
+  </div>
+</nav>
+<div class="abc">
+
+    <h3 class="text-center">Complaint Form</h3>
+
+       <form>
+
+        <label>Name</label>
+        <input type="text" required placeholder="Enter name">
+
+        <label>Email</label>
+        <input type="email" required placeholder="Enter email">
+
+        <label>Phone</label>
+        <input type="text" pattern="[0-9]{10}" required placeholder="10 digit number">
+
+        <label>Vehicle</label>
+        <select>
+            <option>Select</option>
+            <option>Car</option>
+            <option>Bike</option>
+            <option>Truck</option>
+        </select>
+
+        <label>Complaint</label>
+        <textarea placeholder="Enter complaint"></textarea>
+
+        <button type="submit" class="submit">Submit</button>
+        <button type="reset" class="reset">Reset</button>
+
+    </form>
+
+</div>
+<div class="container">
+
+    <h3>Customer Submissions</h3>
+
+    <table>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Vehicle</th>
+                <th>Complaint</th>
+            </tr>
+       
+            <tr>
+                <td colspan="5">No data available</td>
+            </tr>
+</div>
+<footer>
+    
+</footer>
+    <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

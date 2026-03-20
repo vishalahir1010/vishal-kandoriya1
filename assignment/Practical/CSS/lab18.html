@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color:#0f2027;
+        color: white;
+        font-family: sans-serif;
+    }
+    .nav{
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 60px;
+        background:rgba(255,255,255,0.08);
+        align-items: center;
+    }
+    .nav h2{
+        font-weight: 700;
+        color: #00ffcc;
+    }
+    .nav ul{
+        list-style: none;
+        display: flex;
+        gap: 30px;
+    }
+    .nav ul li a{
+        text-decoration: none;
+        font-weight: 500;
+        color: white;
+        transition: 1s;
+    }
+     .nav ul li a:hover{
+        color: #00ffcc;
+     }
+     .vs{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+         justify-content: center;
+         align-items: center;
+        
+     }
+     .vs h1{
+        font-size: 60px;
+        color: #00ffcc;
+        margin-bottom: 20px;
+     }
+     .vs p{
+        max-width: 600px;
+        margin-bottom: 30px;
+     }
+     .vs button{
+        padding: 15px 40px;
+        border-radius: 20px;
+        background:linear-gradient(45deg,#00f5ff,#00ffcc);
+        transition:0.3s;
+        border: none;
+        cursor: pointer;
+     }
+     .vs button:hover{
+        box-shadow: 1px 1px 25px rgb(128, 160, 247);
+        transform: scale(1.1);
+     }
+     .features{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+
+     }
+     .abc{
+        width: 280px;
+        padding: 40px;
+        background:rgba(255,255,255,0.08);
+        border-radius: 20px;
+        transition:0.4s;
+        transform:translateY(50px);
+        }
+     
+     
+     .abc:hover{
+        transform: translatey(-15px);
+        box-shadow: 1px 1px 25px rgb(30, 49, 59);
+     }
+    section{
+        text-align: center;
+        padding: 120px 20px;
+    }
+    .abc i{
+        font-size: 45px;
+        color: #00f5ff;
+        margin: bottom 20px; 
+    }
+    .abc p{
+        font-weight: bolder;
+        padding:10px;
+        font-size: small;
+    }
+    .contact form{
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+        margin-left: 390px;
+    } 
+    .contact input,
+    .contact textarea{
+        padding: 15px;
+        border: none;
+        border-radius: 12px;
+        color:white;
+        background-color:rgba(255,255,255,0.1);
+    }
+    .contact button{
+        padding: 15px;
+        border: none;
+        border-radius: 12px;
+        background:linear-gradient(35deg , rgba(19, 199, 231, 0.993),rgb(4, 213, 250));
+        cursor: pointer;
+        transition: 0.3;
+    }
+    .contact form button:hover{
+        transform: scale(1.05);
+        box-shadow:1px,1px,25px,aqua;
+    }
+</style>
+<body>
+    <div class="nav">
+        <h2>vishal</h2>
+        <ul>
+            <li><a href="#vs">Home</a></li>
+            <li><a href="#feature">Feature</a></li>
+            <li><a href="#contect us">Contect us</a></li>
+        </ul>
+    </div>
+    <section class="vs" id="vs">
+    <h1>Future of Digital Experience</h1>
+    <p>We build secure, fast and modern web solutions that elevate your brand.</p>
+    <button>Explore Now</button>
+</section>
+<section id="feature">
+    <h2>Our Features</h2>
+    <div class="features">
+        <div class="abc">
+        <i class="fas fa-rocket"></i>
+        <h3>Fast perfromance</h3>
+        <p>Optimized websites for lightning speed.</p>
+        </div>
+        <div class="abc">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Advanced Security</h3>
+        <p>Enterprise-grade protection for your data.</p>
+        </div>
+        <div class="abc">
+        <i class="fas fa-code"></i>
+        <h3>Modern Technology</h3>
+        <p>Built using the latest web technologies.</p>
+        </div>
+    </div>
+    </section>
+    <section class="contact" id="contect us">
+        <h2>Contact us</h2>
+        <br><br>
+        <form action="#">
+            <input type="text"placeholder="Your name">
+            <input type="text" placeholder="Your email id">
+            <textarea rows="5" placeholder="Send message"></textarea>
+            <button type="submit">Send message</button>
+        </form>
+    </section>
+</body>
+</html>
