@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo"> <P class="v">This is short text... <span id="txt" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, unde? Laborum delectus rem quos, nihil omnis atque pariatur necessitatibus itaque dolore autem a aspernatur voluptatibus suscipit, cumque dolorum quam officia.</span></P></div>
+    <script src="jquery.min.js"></script>
+    <button id="btn1">Read more</button>
+    <button id="btn2">Read Less</button>
+    <script>
+        $("#btn1").click(function(){
+            $("#txt").show(1000)
+        })
+         $("#btn2").click(function(){
+            $("#txt").hide(1000)
+        })
+    </script>
+</body>
+</html>
