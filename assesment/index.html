@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Stack Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Creator Profile</h1>
+
+        <h2>
+            Rajan
+            <span id="badge"></span>
+        </h2>
+
+        <p>Followers: <span id="followers">1500</span></p>
+
+        <button id="themeBtn">Toggle Theme</button>
+
+        <hr>
+
+        <form id="linkForm">
+            <input type="text" id="title" placeholder="Link Title" required>
+
+            <input type="text" id="url" placeholder="https://example.com" required>
+
+            <button type="submit">Add Link</button>
+
+            <p id="error"></p>
+        </form>
+
+        <h3>Profile Preview</h3>
+
+        <div id="preview"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

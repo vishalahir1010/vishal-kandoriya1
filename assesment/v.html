@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bio Stack Builder</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background:#f4f4f4;
+        }
+
+        .dark{
+            background:#222;
+            color:white;
+        }
+
+        .container{
+            width:90%;
+            max-width:500px;
+            margin:auto;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+        }
+
+        button{
+            padding:10px;
+            cursor:pointer;
+        }
+
+        a{
+            display:inline-block;
+            padding:10px;
+            margin:5px;
+            background:blue;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+        #error{
+            color:red;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Creator Bio Stack</h1>
+
+    <button id="themeBtn">Toggle Theme</button>
+
+    <form id="linkForm">
+
+        <input type="text" id="title"
+        placeholder="Link Title">
+
+        <input type="text" id="url"
+        placeholder="https://example.com">
+
+        <button type="submit">Add Link</button>
+
+        <p id="error"></p>
+
+    </form>
+
+    <h2>Profile Preview</h2>
+
+    <div id="preview"></div>
+
+</div>
+
+<script>
+
+const form = document.getElementById("linkForm");
+const titleInput = document.getElementById("title");
+const urlInput = document.getElementById("url");
+const preview = document.getElementById("preview");
+const error = document.getElementById("error");
+const themeBtn = document.getElementById("themeBtn");
+
+let links = JSON.parse(localStorage.getItem("links")) || [];
+
+function saveLinks(){
+    localStorage.setItem("links", JSON.stringify(links));
+}
+
+function renderLinks(){
+
+    preview.innerHTML = "";
+
+    links.forEach((link,index)=>{
+
+        preview.innerHTML += `
+        <div>
+            <a href="${link.url}" target="_blank">
+                ${link.title}
+            </a>
+
+            <button onclick="deleteLink(${index})">
+                Remove
+            </button>
+        </div>
+        `;
+    });
+}
+
+form.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    let title = titleInput.value.trim();
+    let url = urlInput.value.trim();
+
+    if(title==="" || url===""){
+        error.innerText = "All fields are required";
+        return;
+    }
+
+    if(!url.startsWith("https://")){
+        error.innerText =
+        "URL must start with https://";
+        return;
+    }
+
+    error.innerText = "";
+
+    links.push({
+        title:title,
+        url:url
+    });
+
+    saveLinks();
+    renderLinks();
+
+    form.reset();
+});
+
+function deleteLink(index){
+
+    links.splice(index,1);
+
+    saveLinks();
+    renderLinks();
+}
+
+themeBtn.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    let mode =
+    document.body.classList.contains("dark")
+    ? "dark"
+    : "light";
+
+    localStorage.setItem("theme",mode);
+});
+
+if(localStorage.getItem("theme")==="dark"){
+    document.body.classList.add("dark");
+}
+
+renderLinks();
+
+</script>
+</body>
+</html>

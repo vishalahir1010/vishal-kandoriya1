@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          background-color: green;  
+        }
+        .abc{
+            display: flex;
+            justify-content: center;
+            height: 380px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .v{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+     <div class = "abc">
+        <div class="v">
+            <span id="Hour">00</span>:
+            <span id = "mint">00</span>:
+            <span id = "second">00</span>
+            </div>
+        </div>
+    <script>
+       let s = 1
+       let m = 1
+       let h =1
+       
+      
+        setInterval(()=>{
+            document.getElementById("second").innerHTML = s++
+            if(s>60){
+               document.getElementById("mint").innerHTML = m++  
+               s = 1
+            }
+            if (m>60) {
+                document.getElementById("Hour").innerHTML = h++
+                m=1
+            }
+           
+        },1000)
+    </script>
+</body>
+</html>
