@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Stack Builder</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="profile">
+
+            <div class="avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <h1>Creator Profile</h1>
+
+            <h2>
+                
+                <span id="badge">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Verified
+                </span>
+            </h2>
+
+            <p class="followers">
+                <i class="fa-solid fa-users"></i>
+                Followers:
+                <span id="followers">1500</span>
+            </p>
+
+            <button id="themeBtn">
+                <i class="fa-solid fa-moon"></i>
+                Toggle Theme
+            </button>
+
+        </div>
+
+        <hr>
+
+        <form id="linkForm">
+
+            <input
+            type="text"
+            id="title"
+            placeholder="Enter Link Title"
+            required>
+
+            <input
+            type="text"
+            id="url"
+            placeholder="https://example.com"
+            required>
+
+            <button type="submit">
+                <i class="fa-solid fa-plus"></i>
+                Add Link
+            </button>
+
+            <p id="error"></p>
+
+        </form>
+
+        <h3>Profile Preview</h3>
+
+        <div id="preview"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
