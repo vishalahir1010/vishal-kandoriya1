@@ -1,0 +1,16 @@
+.light{
+  background-color: aqua;
+}
+.dark{
+  background-color: black;
+}
+
+
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #0d6efd;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
