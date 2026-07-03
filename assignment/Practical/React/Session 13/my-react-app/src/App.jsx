@@ -10,7 +10,7 @@ import Product from "./Components/Product";
 import UserList from "./Components/UserList";
 import "./App.css"
 import Axios from "./Components/Axios";
-import ProductList from "./Components/ProductList";
+
 
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
       </Routes>
       <Axios/>
         
-      <ProductList/>
+      
       
     </BrowserRouter>
 
