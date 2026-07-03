@@ -1,0 +1,11 @@
+import React from 'react'
+
+export default function OrderStatus({ isDelivered }) {
+  return (
+    <div>
+      <h2>
+      {isDelivered ? "Order Delivered 🎉" : "Order on the way 🚚"}
+    </h2>
+    </div>
+  )
+}
