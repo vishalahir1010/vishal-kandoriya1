@@ -6,7 +6,7 @@ export default function Child(props) {
       <h1>i am child </h1>
       <div>
         <h3>
-            name:{props.name}
+          name:{props.name}
         </h3>
         <h3>age:{props.age}</h3>
       </div>
