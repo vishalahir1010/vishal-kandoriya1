@@ -1,12 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
-import Product from './assets/Componets/Product'
-import Userprofile from './assets/Componets/Userprofile'
-import Defaultprops from './assets/Componets/defaultprops'
-import ProductCard from './assets/Componets/ProductCard'
+import Product from './Componets/Product'
+import Userprofile from './Componets/Userprofile'
+import Defaultprops from './Componets/defaultprops'
+import ProductCard from './Componets/ProductCard'
 
 
 function App() {
