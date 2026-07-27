@@ -48,8 +48,7 @@ function RestaurantForm() {
         type="text"
         placeholder="Cuisine"
         value={cuisine}
-        onChange={(e)=>setCuisine(e.target.value)}
-      />
+        onChange={(e)=>setCuisine(e.target.value)} />
 
       <br/><br/>
 

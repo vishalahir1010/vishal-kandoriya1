@@ -19,8 +19,6 @@ function App() {
 
     return () => unsubscribe();
   }, []);
-
-
   return (
     <>
       <div style={{ padding: "20px" }}>

@@ -1,47 +1,51 @@
-import { signOut } from "firebase/auth";
-import { auth } from "../firebase";
-import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import {useEffect, useState} from "react";
+import {onAuthStateChanged, signOut} from "firebase/auth";
+import {auth} from "../firebase";
+import {Link, useNavigate} from "react-router-dom";
 
-const Navbar = () => {
+function Navbar(){
+const [user,setUser]=useState(null);
+const navigate = useNavigate();
+useEffect(()=>{
 
-  const { user } = useAuth();
+const unsubscribe = onAuthStateChanged(
+auth,
+(currentUser)=>{
 
-  const handleLogout = async () => {
-    await signOut(auth);
-  };
+setUser(currentUser);
 
-  return (
-    <nav>
+});
 
-      <Link to="/">Home</Link>
 
-      {user ? (
-        <>
-          <span>
-            Welcome, {user.displayName || user.email}
-          </span>
+return ()=>unsubscribe();
 
-          <Link to="/profile">Profile</Link>
 
-          <Link to="/myorders">My Orders</Link>
+},[]);
 
-          <button onClick={handleLogout}>
-            Logout
-          </button>
-        </>
-      ) : (
-        <>
-          <span>Welcome, Guest</span>
 
-          <Link to="/login">
-            Sign In
-          </Link>
-        </>
-      )}
 
-    </nav>
-  );
+const logout = async()=>{
+
+await signOut(auth);
+
+navigate("/login");
+
 };
 
+return(
+<nav>
+<h2>Spotify App</h2>
+{user ?
+<h3>Welcome, {user.displayName || user.email}</h3>
+:
+<h3>Welcome, Guest</h3>
+}
+{user ?
+<button onClick={logout}>Logout</button>
+:
+<Link to="/login">Sign In</Link>
+}
+</nav>
+)
+}
 export default Navbar;

@@ -11,7 +11,7 @@ export default function useTrendingMovies() {
         setLoading(true);
 
         const response = await fetch(
-          "https://api.themoviedb.org/3/trending/movie/day?api_key=YOUR_API_KEY"
+          "https://fakestoreapi.com/products"
         );
 
         if (!response.ok) {

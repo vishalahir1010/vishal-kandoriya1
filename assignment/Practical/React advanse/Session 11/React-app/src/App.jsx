@@ -1,59 +1,36 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
 
-
-
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-import MyOrders from "./pages/MyOrders";
-import ProtectedRoute from "./Componets/ProtectedRoute";
 import Navbar from "./Componets/Navbar";
 
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+// import MyOrders from "./pages/MyOrders";
 
+import ProtectedRoute from "./routes/ProtectedRoute";
 
-function App() {
+function App(){
+return(
+<BrowserRouter>
 
-  return (
+<Navbar/>
 
-    <BrowserRouter>
+<Routes>
 
-      <Navbar />
+<Route path="/login"element={<Login/>}/>
 
-      <Routes>
+<Route path="/profile"element={
+<ProtectedRoute><Profile/></ProtectedRoute>}/>
 
-        <Route
-          path="/"
-          element={<Home />}
-        />
+<Route path="/myorders"element={
+<ProtectedRoute>
 
-        <Route
-          path="/login"
-          element={<Login />}
-        />
+</ProtectedRoute>}/>
+</Routes>
+</BrowserRouter>
 
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        />
+)
 
-        <Route
-          path="/myorders"
-          element={
-            <ProtectedRoute>
-              <MyOrders />
-            </ProtectedRoute>
-          }
-        />
-
-      </Routes>
-
-    </BrowserRouter>
-
-  );
 }
+
 
 export default App;

@@ -1,30 +1,72 @@
-import { auth } from "../firebase";
+import {useState} from "react";
+import {signInWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../firebase";
+import {useNavigate} from "react-router-dom";
 
-import {  GoogleAuthProvider,  signInWithPopup,} from "firebase/auth";
 
-const Login = () => {
+function Login(){
 
-  const login = async () => {
+const [email,setEmail]=useState("");
+const [password,setPassword]=useState("");
 
-    const provider = new GoogleAuthProvider();
+const navigate=useNavigate();
 
-    await signInWithPopup(auth, provider);
 
-  };
+const login=async()=>{
 
-  return (
+try{
 
-    <div>
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
 
-      <h2>Login</h2>
 
-      <button onClick={login}>
-        Sign In With Google
-      </button>
+navigate("/profile");
 
-    </div>
 
-  );
-};
+}
+catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+
+
+return(
+
+<div>
+
+<h2>Login</h2>
+
+
+<input
+placeholder="Email"
+onChange={(e)=>setEmail(e.target.value)}
+/>
+
+
+<input
+type="password"
+placeholder="Password"
+onChange={(e)=>setPassword(e.target.value)}
+/>
+
+
+<button onClick={login}>
+Sign In
+</button>
+
+
+</div>
+
+)
+
+}
+
 
 export default Login;

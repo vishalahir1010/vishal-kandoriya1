@@ -1,51 +1,48 @@
-import React, { useState } from "react";
-import { auth } from "../firebase";
+import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 
-export default function SignUp() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function SignUp() {
 
-  const handleSign = async (e) => {
-    e.preventDefault();
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  const [message,setMessage] = useState("");
+
+  const register = async () => {
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
 
-      alert("User Registered Successfully");
-      setEmail("");
-      setPassword("");
-    } catch (err) {
-      alert(err.message);
+      await createUserWithEmailAndPassword( auth, email, password);
+
+      setMessage("Account created successfully");
+
+    } catch(error) {
+
+      setMessage(error.message);
+
     }
   };
 
+
   return (
     <div>
-      <form onSubmit={handleSign}>
-        <h2>Sign Up</h2>
 
-        <input
-          type="email"
-          value={email}
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}/>
+      <h2>Sign Up</h2>
 
-        <br />
-        <br />
+      <input type="email"  placeholder="Email"
+        onChange={(e)=>setEmail(e.target.value)} />
 
-        <input
-          type="password"
-          value={password}
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+      <input type="password" placeholder="Password"
+        onChange={(e)=>setPassword(e.target.value)} />
 
-        <br />
-        <br />
+      <button onClick={register}>
+        Register
+      </button>
 
-        <button type="submit">Register</button>
-      </form>
+      <p>{message}</p>
+
     </div>
-  );
+  )
 }
+
+export default SignUp;

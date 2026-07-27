@@ -12,17 +12,17 @@ import UserContext from "./Componets/UserContext";
 function App() {
   const [count, setCount] = useState(0)
   const user = {
-    name: "Rahul",
+    name: "Vishal",
     isLoggedIn: true,
   };
 
   return (
     <>
-      {/* <h1>My Playlist</h1>
+      <h1>My Playlist</h1>
 
       <PlaylistCard
         song="Perfect"
-        artist="Ed Sheeran"/>
+        artist="ABC"/>
 
       <PlaylistCard
         song="Blinding Lights"
@@ -30,8 +30,8 @@ function App() {
 
       <PlaylistCard
         song="Levitating"
-        artist="Dua Lipa"/>
-     <FlipkartProductList /> */}
+        artist="XYZ"/>
+     <FlipkartProductList />
 
      <UserContext.Provider value={user}>
       <Feed />

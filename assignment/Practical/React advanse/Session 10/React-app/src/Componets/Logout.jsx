@@ -1,27 +1,43 @@
-import { signOut } from "firebase/auth";
-import { auth } from "../firebase";
-import React from 'react'
+import {useEffect,useState} from "react";
+import {onAuthStateChanged, signOut} from "firebase/auth";
 
-export default function Logout() {
- 
+import {auth} from "../firebase";
 
-const handleLogout = async () => {
-  try {
-    await signOut(auth);
-    alert("Logged out successfully");
-  } catch (error) {
-    console.error(error);
-    alert("Logout failed");
-  }
+import SignUp from "../componets/SignUp";
+import Login from "../Componets/Login";
+function App(){
+const [user,setUser]=useState(null);
+useEffect(()=>{
 
-};
- return (
-    <div>
-      {user && (
-  <button onClick={handleLogout}>
-    Logout
-  </button>
-)}
-  </div>
-  )
+const unsubscribe = onAuthStateChanged(auth,(currentUser)=>{
+setUser(currentUser);
+});
+return ()=>unsubscribe();
+},[]);
+const logout = async()=>{
+try{
+await signOut(auth);
 }
+catch(error){
+console.log(error);
+}
+};
+return(
+<div>
+<h1>Firebase Authentication</h1>
+{
+user ?
+<div>
+<h3>Logged in user: {user.email}</h3>
+<button onClick={logout}>Logout</button>
+</div>
+:
+<div>
+<SignUp/>
+<Login/>
+</div>
+}
+</div>
+)
+}
+export default App;

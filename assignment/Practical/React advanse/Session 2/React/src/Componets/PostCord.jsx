@@ -14,7 +14,7 @@ export default function PostCord() {
       <h2>Nature Photography</h2>
 
       <img
-        src="https://picsum.photos/300/200"alt="post"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCSuTOBSA1UZa_ZqdZW_awWyyDWZHdZjBBkCgZnvsh9w&s=10"alt="post"
         width="100%"/>
 
       <br />
