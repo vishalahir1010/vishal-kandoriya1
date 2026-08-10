@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#fdf2f8"/>
+  <path d="M260 250c0-80 60-120 140-120 80 0 140 40 140 120 0 70-60 120-140 120-80 0-140-50-140-120z" fill="#ec4899"/>
+  <rect x="280" y="310" width="240" height="80" rx="20" ry="20" fill="#f472b6"/>
+  <circle cx="320" cy="250" r="12" fill="#fff"/>
+  <circle cx="480" cy="250" r="12" fill="#fff"/>
+  <path d="M340 340c24 20 40 20 64 0" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <text x="400" y="545" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#9d174d" font-weight="700">Lava Cake</text>
+</svg>

@@ -1,0 +1,25 @@
+Answer
+
+I would use getStaticProps because the featured restaurant list is updated only once a day. getStaticProps generates the homepage at build time, so the server can serve pre-rendered HTML very quickly. Since the restaurant names and other content are already present in the HTML, Google's crawler can easily read and index them without depending on client-side JavaScript.
+
+I would use Incremental Static Regeneration (ISR) with revalidate so that Next.js can regenerate the page periodically when the restaurant list changes.
+
+Why not getServerSideProps? It generates the page on every request, which adds server processing time and is unnecessary when the data doesn't change frequently.
+
+Effect on Google: Both methods can provide crawl able server-rendered HTML, but getStaticProps gives Google a fast, pre-generated page that can be efficiently cached and served, improving page-load performance and reducing server response time.
+
+Final choice
+
+getStaticProps + ISR → best choice
+
+Restaurant data
+      ↓
+Generate HTML
+      ↓
+Static page
+      ↓
+Fast response + CDN caching
+      ↓
+Google crawler gets complete HTML
+      ↓
+Better crawlability + performance

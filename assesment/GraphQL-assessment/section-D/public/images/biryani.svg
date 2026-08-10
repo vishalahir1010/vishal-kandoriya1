@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#fff7ed"/>
+  <rect x="180" y="190" width="440" height="220" rx="42" ry="42" fill="#b45309"/>
+  <circle cx="280" cy="300" r="62" fill="#f59e0b"/>
+  <circle cx="400" cy="300" r="62" fill="#fbbf24"/>
+  <circle cx="520" cy="300" r="62" fill="#f59e0b"/>
+  <rect x="240" y="340" width="320" height="30" rx="15" ry="15" fill="#fb923c"/>
+  <circle cx="292" cy="292" r="10" fill="#fff"/>
+  <circle cx="410" cy="288" r="10" fill="#fff"/>
+  <circle cx="532" cy="292" r="10" fill="#fff"/>
+  <path d="M250 250c24-38 64-58 110-58" stroke="#fde68a" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <text x="400" y="545" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#7c2d12" font-weight="700">Chicken Biryani</text>
+</svg>

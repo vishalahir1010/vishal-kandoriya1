@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#fffbeb"/>
+  <rect x="260" y="190" width="280" height="220" rx="30" ry="30" fill="#f59e0b"/>
+  <rect x="280" y="150" width="240" height="60" rx="20" ry="20" fill="#fbbf24"/>
+  <rect x="300" y="220" width="40" height="140" rx="20" ry="20" fill="#fde68a"/>
+  <rect x="360" y="220" width="40" height="140" rx="20" ry="20" fill="#fde68a"/>
+  <rect x="420" y="220" width="40" height="140" rx="20" ry="20" fill="#fde68a"/>
+  <path d="M324 364c8 18 18 28 28 36" stroke="#fb923c" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M384 364c8 18 18 28 28 36" stroke="#fb923c" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <text x="400" y="545" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#92400e" font-weight="700">Loaded Fries</text>
+</svg>

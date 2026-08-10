@@ -1,0 +1,704 @@
+# Professional Development Prompt — React + Apollo Client Food Category Filter App
+
+You are an expert React.js frontend developer. Build a complete, clean, professional-level food browsing/filter application using **React + Vite + Apollo Client + GraphQL**.
+
+## 1. Technology Requirements
+
+Use exactly:
+
+* React.js
+* Vite
+* JavaScript (NOT TypeScript)
+* Apollo Client
+* GraphQL
+* CSS
+* React Hooks
+
+Install only these packages:
+
+```bash
+npm install @apollo/client graphql
+```
+
+Do NOT add unnecessary libraries such as Axios, Redux, React Query, Tailwind, Bootstrap, Material UI, or any backend/server package.
+
+The application must work entirely from the React frontend.
+
+---
+
+## 2. Important Apollo Client Version Requirement
+
+Assume the project uses the **latest Apollo Client version**.
+
+Be careful with Apollo Client import paths because Apollo Client v4 may not export React hooks/components from the same path as older versions.
+
+Use the correct imports for the installed Apollo Client version.
+
+For Apollo Client v4, React-specific APIs should be imported from the appropriate React entry point, for example:
+
+```js
+import { ApolloProvider, useQuery } from "@apollo/client/react";
+```
+
+Do NOT blindly use:
+
+```js
+import { ApolloProvider } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+```
+
+if those imports are incompatible with the installed version.
+
+The Apollo Client must be configured correctly with:
+
+* ApolloClient
+* HttpLink
+* InMemoryCache
+* ApolloProvider
+
+Do NOT create an Apollo Client without a valid `link`.
+
+---
+
+# 3. Application Requirement
+
+Create a page for a food browsing application.
+
+The page should contain:
+
+1. A professional page heading.
+2. Food category filter chips below the heading.
+3. Food items displayed below the filter chips.
+4. Clicking a category chip should immediately filter the food items.
+5. The selected chip must have a clearly different visual style.
+6. A loading spinner must be displayed while the GraphQL category request is loading.
+7. A readable error message must be displayed if the GraphQL request fails.
+
+---
+
+# 4. GraphQL Requirement
+
+Use Apollo Client's `useQuery` hook to fetch food categories from a GraphQL API.
+
+Create a GraphQL query similar to:
+
+```graphql
+query GetCategories {
+  categories {
+    id
+    name
+  }
+}
+```
+
+However, **do not assume that this exact query works with an arbitrary API**.
+
+Before writing the final code:
+
+* Make sure the selected GraphQL API actually supports categories.
+* Make sure the query matches the API's real schema.
+* Make sure the returned field names match the query.
+* Do not invent GraphQL fields.
+* Do not use a REST API as a replacement.
+* Do not create a backend server.
+* Do not use MockedProvider.
+
+If a public GraphQL API does not provide a suitable food-category schema, clearly state that and use a GraphQL API that actually supports the required category query.
+
+The final application must use Apollo Client's `useQuery`.
+
+---
+
+# 5. Apollo Client Configuration
+
+Create a dedicated Apollo Client configuration file.
+
+Example structure:
+
+```text
+src/
+├── components/
+│   ├── CategoryChips.jsx
+│   ├── FoodItemCard.jsx
+│   ├── FoodItemList.jsx
+│   └── LoadingSpinner.jsx
+│
+├── graphql/
+│   └── queries.js
+│
+├── data/
+│   └── foodItems.js
+│
+├── lib/
+│   └── apolloClient.js
+│
+├── App.jsx
+├── main.jsx
+├── App.css
+└── index.css
+```
+
+You may improve this structure if necessary, but keep it simple and professional.
+
+---
+
+# 6. Apollo Provider
+
+Wrap the React application with `ApolloProvider`.
+
+The provider must receive the configured Apollo Client.
+
+The application must follow this structure conceptually:
+
+```text
+main.jsx
+    ↓
+ApolloProvider
+    ↓
+App
+    ↓
+Food Category Page
+    ↓
+useQuery()
+```
+
+Do not create multiple Apollo Client instances unnecessarily.
+
+Do not put the Apollo Client configuration directly inside the component.
+
+---
+
+# 7. Category State
+
+Use React's `useState` to track the currently selected category.
+
+Example:
+
+```js
+const [selectedCategory, setSelectedCategory] = useState("All");
+```
+
+The initial state should display all food items.
+
+When the user clicks a category chip:
+
+```text
+User clicks category
+        ↓
+setSelectedCategory(category)
+        ↓
+React re-renders
+        ↓
+Food items are filtered
+        ↓
+Only matching items are displayed
+```
+
+Do NOT reload the page.
+
+Do NOT make another API request when clicking a category.
+
+The filtering must happen locally using the hardcoded food-item array.
+
+---
+
+# 8. Hardcoded Food Data
+
+Create a separate hardcoded JavaScript array containing food items.
+
+Example structure:
+
+```js
+const foodItems = [
+  {
+    id: 1,
+    name: "Margherita Pizza",
+    category: "Pizza",
+    price: 299,
+    description: "Classic pizza with tomato, mozzarella and basil.",
+    image: "..."
+  },
+  {
+    id: 2,
+    name: "Veg Burger",
+    category: "Burger",
+    price: 199,
+    description: "Crispy vegetable patty with fresh vegetables.",
+    image: "..."
+  }
+];
+```
+
+Include enough realistic food items to properly demonstrate filtering.
+
+Use several categories such as:
+
+* Pizza
+* Burger
+* Pasta
+* Biryani
+* Dessert
+
+The category values in the hardcoded food items must match the category names returned by the GraphQL API.
+
+If the API uses different category names, adapt the hardcoded data accordingly.
+
+---
+
+# 9. Filtering Logic
+
+Filter the hardcoded food array based on `selectedCategory`.
+
+The logic must behave like this:
+
+```text
+Selected category = "All"
+        ↓
+Show every food item
+
+Selected category = "Pizza"
+        ↓
+Show only foodItems where category === "Pizza"
+
+Selected category = "Burger"
+        ↓
+Show only foodItems where category === "Burger"
+```
+
+Use JavaScript's `filter()` method.
+
+Do not mutate the original food array.
+
+Do not store the filtered array unnecessarily in state.
+
+Prefer deriving the filtered list from:
+
+```js
+selectedCategory
+```
+
+and:
+
+```js
+foodItems
+```
+
+---
+
+# 10. Category Chips UI
+
+Render the categories returned by GraphQL as clickable filter chips.
+
+Also include an `"All"` chip.
+
+Example:
+
+```text
+Food Menu
+
+[ All ] [ Pizza ] [ Burger ] [ Pasta ] [ Biryani ] [ Dessert ]
+
+------------------------------------------------------------
+
+Food Cards
+```
+
+Each chip must be a button.
+
+Do NOT use `<div>` elements as clickable buttons.
+
+---
+
+# 11. Selected Chip Styling
+
+The currently selected chip must be visually different.
+
+For example:
+
+```css
+.category-chip.active {
+  background: #...
+  color: #...
+  border-color: #...
+}
+```
+
+When the user selects Pizza:
+
+```text
+[ All ] [ Pizza ✓ ] [ Burger ] [ Pasta ]
+        ↑
+     Active
+```
+
+Only the selected category should receive the active styling.
+
+Use React state to determine whether the chip is active.
+
+---
+
+# 12. Loading State
+
+While the GraphQL query is loading, do NOT immediately render the category chips.
+
+Instead display a professional loading spinner.
+
+Example:
+
+```text
+Food Menu
+
+        ⟳
+   Loading categories...
+```
+
+The component should use:
+
+```js
+const { loading, error, data } = useQuery(GET_CATEGORIES);
+```
+
+Then handle:
+
+```js
+if (loading) {
+  return <LoadingSpinner />;
+}
+```
+
+The loading state must be visible while the request is pending.
+
+Create a reusable `LoadingSpinner` component.
+
+Do not use an external spinner library.
+
+Use CSS for the spinner.
+
+---
+
+# 13. Error State
+
+If GraphQL returns an error, show a readable user-friendly error message.
+
+Example:
+
+```text
+Unable to load food categories.
+
+Please check your internet connection and try again.
+```
+
+Do not display raw technical errors directly to the user.
+
+However, log the actual error to the browser console for debugging:
+
+```js
+console.error(error);
+```
+
+The UI should not crash if the GraphQL request fails.
+
+---
+
+# 14. Empty State
+
+Also handle the situation where the selected category has no matching food items.
+
+Display:
+
+```text
+No food items found in this category.
+```
+
+instead of showing an empty page.
+
+---
+
+# 15. Food Item Cards
+
+Create a reusable:
+
+```text
+FoodItemCard.jsx
+```
+
+component.
+
+Each card should display:
+
+* Food image
+* Food name
+* Category
+* Description
+* Price
+
+Example:
+
+```text
+┌─────────────────────────┐
+│                         │
+│       Food Image        │
+│                         │
+├─────────────────────────┤
+│ Margherita Pizza        │
+│ Pizza                   │
+│                         │
+│ Classic tomato pizza... │
+│                         │
+│ ₹299                    │
+└─────────────────────────┘
+```
+
+Use clean, professional CSS.
+
+Make the cards responsive.
+
+---
+
+# 16. Component Responsibilities
+
+Keep components separated properly.
+
+### App.jsx
+
+Responsible for:
+
+* Rendering the main page
+* Running `useQuery`
+* Managing `selectedCategory`
+* Filtering food items
+* Passing data to child components
+
+### CategoryChips.jsx
+
+Responsible for:
+
+* Rendering category buttons
+* Highlighting the selected category
+* Calling `setSelectedCategory`
+
+### FoodItemList.jsx
+
+Responsible for:
+
+* Rendering the filtered food items
+* Showing the empty state
+
+### FoodItemCard.jsx
+
+Responsible for:
+
+* Rendering one food item
+
+### LoadingSpinner.jsx
+
+Responsible for:
+
+* Displaying the loading spinner
+
+### queries.js
+
+Responsible for:
+
+* GraphQL query definitions
+
+### foodItems.js
+
+Responsible for:
+
+* Hardcoded food data
+
+### apolloClient.js
+
+Responsible for:
+
+* Apollo Client configuration
+
+---
+
+# 17. Responsive Design
+
+The application must work properly on:
+
+* Desktop
+* Laptop
+* Tablet
+* Mobile
+
+Food cards should automatically adjust using CSS Grid.
+
+For example:
+
+```css
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+```
+
+Category chips should wrap onto multiple lines on smaller screens.
+
+Do not allow horizontal page overflow.
+
+---
+
+# 18. Professional UI
+
+Use a modern food-delivery style interface.
+
+Requirements:
+
+* Clean spacing
+* Rounded cards
+* Subtle shadows
+* Professional typography
+* Good contrast
+* Hover effects
+* Active category state
+* Responsive layout
+* Clean buttons
+* Proper empty/loading/error states
+
+Do not make the UI overly complicated.
+
+Do not use inline styles unless absolutely necessary.
+
+Keep styling in CSS files.
+
+---
+
+# 19. Important Restrictions
+
+DO NOT:
+
+* Create an Express server.
+* Create a Node.js backend.
+* Create a database.
+* Create a JSON server.
+* Use MockedProvider.
+* Use Redux.
+* Use Axios.
+* Use REST APIs.
+* Use localStorage.
+* Use Firebase.
+* Use Next.js.
+* Use TypeScript.
+* Use Tailwind.
+* Use unnecessary npm packages.
+* Invent GraphQL fields.
+* Invent an API response structure.
+* Hardcode GraphQL response data inside the component.
+* Fetch food items from the API.
+
+The only remote data should be the **food categories through GraphQL**.
+
+The food items must remain a hardcoded JavaScript array in the frontend.
+
+---
+
+# 20. Final Folder Structure
+
+Before providing the code, show the complete folder structure.
+
+Then provide the complete contents of every required file.
+
+Do not skip any file.
+
+Do not use placeholders such as:
+
+```text
+// rest of the code
+```
+
+or:
+
+```text
+// add your code here
+```
+
+Every file must contain complete working code.
+
+---
+
+# 21. Code Quality
+
+The code must:
+
+* Use functional React components.
+* Use proper JSX.
+* Use meaningful variable names.
+* Use reusable components.
+* Avoid unnecessary state.
+* Avoid unnecessary `useEffect`.
+* Use `useQuery` correctly.
+* Use `useState` correctly.
+* Have no missing imports.
+* Have no unused imports.
+* Have no undefined variables.
+* Have no incorrect component names.
+* Have no incorrect file paths.
+* Have no missing CSS imports.
+* Have no incorrect Apollo Client configuration.
+
+---
+
+# 22. Explain the Data Flow
+
+After providing the code, explain briefly:
+
+1. How Apollo Client connects to the GraphQL API.
+2. How `ApolloProvider` makes the client available.
+3. How `useQuery` retrieves categories.
+4. How `useState` stores the selected category.
+5. How `filter()` filters the hardcoded food array.
+6. How clicking a chip causes real-time UI updates.
+7. How loading and error states are handled.
+
+---
+
+# 23. Final Verification Checklist
+
+Before giving the answer, mentally verify all of the following:
+
+* [ ] `npm install @apollo/client graphql` is sufficient.
+* [ ] Apollo Client imports match the installed version.
+* [ ] `ApolloProvider` is correctly imported.
+* [ ] `useQuery` is correctly imported.
+* [ ] Apollo Client has a valid `link`.
+* [ ] Apollo Client has `InMemoryCache`.
+* [ ] The GraphQL endpoint is valid.
+* [ ] The GraphQL query matches the endpoint's actual schema.
+* [ ] No MockedProvider is used.
+* [ ] No backend is required.
+* [ ] Categories come from GraphQL.
+* [ ] Food items come from a hardcoded JavaScript array.
+* [ ] `useState` controls the active category.
+* [ ] Clicking a category filters immediately.
+* [ ] `"All"` displays every food item.
+* [ ] Active chip has distinct styling.
+* [ ] Loading spinner works.
+* [ ] Error state works.
+* [ ] Empty state works.
+* [ ] Food cards render correctly.
+* [ ] No missing imports.
+* [ ] No undefined variables.
+* [ ] No unnecessary dependencies.
+* [ ] Responsive CSS works.
+* [ ] The project can run with `npm run dev`.
+
+If there is any conflict between an example in this prompt and the actual GraphQL API schema, **the real API schema takes priority**. Do not invent fields to make the example work.
+
+Give me the project in this order:
+
+1. Final folder structure
+2. Installation command
+3. Apollo Client configuration
+4. GraphQL query
+5. Hardcoded food data
+6. Components
+7. App.jsx
+8. main.jsx
+9. CSS
+10. How to run
+11. Short explanation of how everything works
+12. Final verification/checklist

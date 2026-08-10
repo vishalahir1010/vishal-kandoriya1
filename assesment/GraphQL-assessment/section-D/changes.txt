@@ -1,0 +1,3 @@
+i have changed it ui for giving the prompt.
+ai's original code was not working because of it not installed node modules and vite.
+using ai coding become more faster but developer have to review that code still ai makes mistakes so we have to fix it....

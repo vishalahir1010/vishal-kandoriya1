@@ -1,0 +1,14 @@
+{
+  "songs": [
+    {
+      "id": "1",
+      "title": "Believer",
+      "artist": "Imagine Dragons"
+    },
+    {
+      "id": "2",
+      "title": "Perfect",
+      "artist": "Ed Sheeran"
+    }
+  ]
+}

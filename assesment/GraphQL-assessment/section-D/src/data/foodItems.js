@@ -1,0 +1,68 @@
+const foodItems = [
+  {
+    id: 1,
+    name: "Margherita Pizza",
+    category: "Pizza",
+    price: 299,
+    description: "Classic pizza with tomato, mozzarella and basil.",
+    image: "/images/pizza.svg",
+  },
+  {
+    id: 2,
+    name: "Veg Burger",
+    category: "Burger",
+    price: 199,
+    description: "Crispy vegetable patty with fresh lettuce and sauce.",
+    image: "/images/burger.svg",
+  },
+  {
+    id: 3,
+    name: "Creamy Alfredo Pasta",
+    category: "Pasta",
+    price: 349,
+    description: "Rich fettuccine pasta tossed in creamy garlic sauce.",
+    image: "/images/pasta.svg",
+  },
+  {
+    id: 4,
+    name: "Chicken Biryani",
+    category: "Biryani",
+    price: 399,
+    description: "Aromatic biryani layered with tender chicken and spices.",
+    image: "/images/biryani.svg",
+  },
+  {
+    id: 5,
+    name: "Chocolate Lava Cake",
+    category: "Dessert",
+    price: 199,
+    description: "Warm chocolate cake with a gooey molten centre.",
+    image: "/images/dessert.svg",
+  },
+  {
+    id: 6,
+    name: "Paneer Tikka Pizza",
+    category: "Pizza",
+    price: 319,
+    description: "Handcrafted pizza topped with tandoori paneer and veggies.",
+    image: "/images/pizza.svg",
+  },
+  {
+    id: 7,
+    name: "Classic Fries",
+    category: "Burger",
+    price: 149,
+    description: "Crispy shoestring fries with sea salt.",
+    image: "/images/fries.svg",
+  },
+  {
+    id: 8,
+    name: "Veg Biryani",
+    category: "Biryani",
+    price: 279,
+    description: "Spiced rice with mixed vegetables and fresh herbs.",
+    image: "/images/biryani.svg",
+  },
+];
+
+export default foodItems;
